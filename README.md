@@ -1,2 +1,4 @@
 # Cloudflare-workers-sub
-通过Cloudflare Workers共享订阅链接
+sub.js =>>通过Cloudflare Workers共享订阅链接
+proxy.js =>>通过Cloudflare Workers代理网站
+forward.js =>>通过Cloudflare Workers反向代理单个网站
