@@ -1,6 +1,6 @@
 # Cloudflare-workers-sub
 
-- sub.js =>>通过Cloudflare Workers共享订阅链接<br>
+- sub.js =>>通过Cloudflare Workers共享订阅链接   subfilter.py是用来配合sub.js的，因为cloudflare workers功能受限，还是python比较方便。 SubFilter功能有合并订阅&过滤垃圾关键词&过滤垃圾节点<br>
 
 - proxy.js =>>通过Cloudflare Workers代理网站<br>
 
