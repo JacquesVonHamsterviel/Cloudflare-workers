@@ -1,9 +1,6 @@
 addEventListener("fetch", event => {
   event.respondWith(handleRequest(event.request))
 })
-
-
-
 async function handleRequest(request) {
   //Generate Radom Value
   function randomString(e) {    
@@ -15,33 +12,34 @@ async function handleRequest(request) {
     return n
 }
   var radom=randomString(64);
-
   let { pathname } = new URL(request.url);
-
   if (pathname=="/example"||pathname=="/example/") {
   return new Response("Hello worker!", { headers: { "content-type": "text/plain" }})
-  }
-
-if (pathname=="/default"||pathname=="/default/") {
-  return fetch(`https://bigairport.icu/api/v1/client/subscribe?token=9229eef97b5f8b6afe2c2615e38e9d18`);
   }
 
 //识别Clash
 if (pathname.indexOf("clash")!=-1||pathname.indexOf("Clash")!=-1)
 {
-    return fetch(`https://sub.id9.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fsub.usercontent.workers.dev%2Fdefault&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini`);
-  }
+  return fetch(`https://sub.id9.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fsub.usercontent.workers.dev%2Fhahahahaha&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini`);
+}
 
-  
+
+//free
+if (pathname=="/1") {
+  return fetch(`https://raw.githubusercontent.com/freefq/free/master/v2`);
+} 
+if (pathname=="/2") {
+  return fetch(`https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2`);
+}
 
 //代做观察
-if (pathname=="/b"||pathname=="/b/") {
+if (pathname=="/a"||pathname=="/a/") {
   return fetch(`https://patriot.ninja//index.php?m=wray&token=NFyuqXdwImkIVdo97NNYry18gnvNmKdhF97h3M0vDTzOKerRbF9rKWHCFSZHuj9CLVyXbi8qDB4%3D`);
   }
-
-
+if (pathname=="/b"||pathname=="/b/") {
+  return fetch(`https://bigairport.icu/api/v1/client/subscribe?token=9229eef97b5f8b6afe2c2615e38e9d18`);
+  }
 //default pages
-
 if (pathname=="/") {
   return new Response("<html><head><title>Workers</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><h1>Hello!</h1><a href='cn'>中文</a><h3>Service Status: [Working]</h3><a href='/help'>Get Help</a><br><br><a href='/download'>Download Apps</a><br><br><a href='/about'>About</a><h6>ID:"+radom+"</h6></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8' }})
   //return Response.redirect("", 301);
@@ -68,7 +66,5 @@ if (pathname=="/cn-download"||pathname=="/cn-download/") {
 if (pathname=="/about"||pathname=="/about/") {
   return new Response("<html><head><title>About</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><a href='javascript:history.go(-1);'>Back</a><p>sub.usercontent.workers.dev</p></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8'}})
 }  
-return fetch(`https://bigairport.icu/api/v1/client/subscribe?token=9229eef97b5f8b6afe2c2615e38e9d18`);
-//spare https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
-//      https://github.com/freefq/free/blob/master/README.md
+return fetch(`https://example.com`);
 }
