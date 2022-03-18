@@ -11,5 +11,9 @@
 - akamai.js =>> 通过Cloudflare Workers部署假的akamai cdn错误页面 Fake Akamai Error Page<br> Example: https://akamai.usercontent.workers.dev <br>
 
 - baidu.js =>> 对静态页面网站的尝试 （原理是通过python扫描建立网站目录，将每个文件里的"替换成'，\n替换为\\n，图片资源 全部改为base64的对javascript文件直接转译效果不是太好。<br>
- <br>
- <br>
+
+- ip.js =>> 任意链接返回用户ip。 Return client ip Address <br> Example: https://ip.usercontent.workers.dev <br>
+
+
+
+<br><br>
