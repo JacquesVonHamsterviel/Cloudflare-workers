@@ -5,3 +5,5 @@
 - proxy.js =>>通过Cloudflare Workers代理网站<br>
 
 - forward.js =>>通过Cloudflare Workers反向代理单个网站<br>
+
+- phishing.js =>>通过Cloudflare Workers部署假的CloudFlare phishing页面<br>
