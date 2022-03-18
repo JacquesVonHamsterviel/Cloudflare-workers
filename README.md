@@ -7,3 +7,5 @@
 - forward.js =>>通过Cloudflare Workers反向代理单个网站<br>
 
 - phishing.js =>>通过Cloudflare Workers部署假的CloudFlare phishing页面<br>
+
+- akamai=>> 通过Cloudflare Workers部署假的akamai cdn错误页面 Fake Akamai Error Page
