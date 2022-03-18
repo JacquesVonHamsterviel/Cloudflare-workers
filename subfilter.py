@@ -94,7 +94,7 @@ def sub_filter_muti(list_link,list_remove,list_node_remove):
 
 
 
-links=["https://sub.usercontent.workers.dev/default","https://sub.usercontent.workers.dev/1","https://sub.usercontent.workers.dev/2"]
+links=["https://sub.usercontent.workers.dev/1","https://sub.usercontent.workers.dev/2"]
 words_filter=["github.com/v2rayfree - ","github.com/freefq - ","-by BuLink.xyz","github.com/v2rayfree%20-%20","github.com/freefq%20-%20",u'\u3010\u76f4\u8fde\u3011']
 words_remove_node=["u66f4","u5b98","u5899","u53d8","u6d4b"]
 sub=sub_filter_muti(links,words_filter,words_remove_node)
