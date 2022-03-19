@@ -17,28 +17,31 @@ async function handleRequest(request) {
   return new Response("Hello worker!", { headers: { "content-type": "text/plain" }})
   }
 
-//识别Clash
-if (pathname.indexOf("clash")!=-1||pathname.indexOf("Clash")!=-1)
-{
-  return fetch(`https://sub.id9.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fsub.usercontent.workers.dev%2Fhahahahaha&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini`);
-}
 
 
-//free
+
+//archived
 if (pathname=="/1") {
   return fetch(`https://raw.githubusercontent.com/freefq/free/master/v2`);
 } 
 if (pathname=="/2") {
   return fetch(`https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2`);
 }
-
-//代做观察
-if (pathname=="/a"||pathname=="/a/") {
+if (pathname=="/3") {
   return fetch(`https://patriot.ninja//index.php?m=wray&token=NFyuqXdwImkIVdo97NNYry18gnvNmKdhF97h3M0vDTzOKerRbF9rKWHCFSZHuj9CLVyXbi8qDB4%3D`);
   }
-if (pathname=="/b"||pathname=="/b/") {
-  return fetch(`https://bigairport.icu/api/v1/client/subscribe?token=9229eef97b5f8b6afe2c2615e38e9d18`);
+if (pathname=="/4") {
+  return fetch(`https://bigairport.icu/api/v1/client/subscribe?token=488ecba43f4f60f5dba6439239a91b93`);
   }
+
+
+
+
+//识别Clash
+if (pathname.indexOf("clash")!=-1||pathname.indexOf("Clash")!=-1)
+{
+  return fetch(`https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml`);
+}
 //default pages
 if (pathname=="/") {
   return new Response("<html><head><title>Workers</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><h1>Hello!</h1><a href='cn'>中文</a><h3>Service Status: [Working]</h3><a href='/help'>Get Help</a><br><br><a href='/download'>Download Apps</a><br><br><a href='/about'>About</a><h6>ID:"+radom+"</h6></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8' }})
@@ -66,5 +69,6 @@ if (pathname=="/cn-download"||pathname=="/cn-download/") {
 if (pathname=="/about"||pathname=="/about/") {
   return new Response("<html><head><title>About</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><a href='javascript:history.go(-1);'>Back</a><p>sub.usercontent.workers.dev</p></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8'}})
 }  
-return fetch(`https://example.com`);
+return fetch(`https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt`);
+//return new Response("", { headers: { "content-type": "text/plain" }})
 }
