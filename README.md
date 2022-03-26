@@ -16,6 +16,6 @@
 
 - ip.js =>> 任意链接返回用户ip。 Return client ip Address <br> Example: https://ip.usercontent.workers.dev <br>
 
-
+- rate-limit =>> 通过Cloudflare Workers部署假的CloudFlare Rate Limit页面<br> Example: https://rate-limit.usercontent.workers.dev <br>
 
 <br><br>
