@@ -1,7 +1,15 @@
+const blocked_region = ["CN"]
+const blocked_ip_address = []
+
+
 addEventListener("fetch", event => {
   event.respondWith(handleRequest(event.request))
 })
 async function handleRequest(request) {
+  //Region
+  const region = request.headers.get('cf-ipcountry').toUpperCase();
+  //IP
+  const ip_address = request.headers.get('cf-connecting-ip');
   //Generate Radom Value
   function randomString(e) {    
     e = e || 32;
@@ -11,31 +19,34 @@ async function handleRequest(request) {
     for (i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
     return n
 }
+
+
+//自动反诈
+if (blocked_region.includes(region)) {
+return Response.redirect("http://www.js96110.com.cn", 302);  
+//return new Response("SSL Error", { headers: { "content-type": "text/plain" }})        
+    } 
+else if(blocked_ip_address.includes(ip_address)){
+return Response.redirect("http://www.js96110.com.cn", 302);  
+//return new Response("SSL Error", { headers: { "content-type": "text/plain" }})        
+    } else{
+
+
+
   var radom=randomString(64);
   let { pathname } = new URL(request.url);
   if (pathname=="/example"||pathname=="/example/") {
   return new Response("Hello worker!", { headers: { "content-type": "text/plain" }})
   }
+if (pathname=="/region") {
+return new Response(region, { headers: { "content-type": "text/plain" }})
 
-
-
-
-//archived
-if (pathname=="/1") {
-  return fetch(`https://raw.githubusercontent.com/freefq/free/master/v2`);
-} 
-if (pathname=="/2") {
-  return fetch(`https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2`);
-}
-if (pathname=="/3") {
-  return fetch(`https://patriot.ninja//index.php?m=wray&token=NFyuqXdwImkIVdo97NNYry18gnvNmKdhF97h3M0vDTzOKerRbF9rKWHCFSZHuj9CLVyXbi8qDB4%3D`);
-  }
-if (pathname=="/4") {
-  return fetch(`https://bigairport.icu/api/v1/client/subscribe?token=488ecba43f4f60f5dba6439239a91b93`);
   }
 
+  if (pathname=="/ip") {
+return new Response(ip_address, { headers: { "content-type": "text/plain" }})
 
-
+  }
 
 //识别Clash
 if (pathname.indexOf("clash")!=-1||pathname.indexOf("Clash")!=-1)
@@ -44,11 +55,11 @@ if (pathname.indexOf("clash")!=-1||pathname.indexOf("Clash")!=-1)
 }
 //default pages
 if (pathname=="/") {
-  return new Response("<html><head><title>Workers</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><h1>Hello!</h1><a href='cn'>中文</a><h3>Service Status: [Working]</h3><a href='/help'>Get Help</a><br><br><a href='/download'>Download Apps</a><br><br><a href='/about'>About</a><h6>ID:"+radom+"</h6></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8' }})
+  return new Response("<html><head><title>Workers</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><h1>Hello!</h1><a href='cn'>中文</a><h3>Service Status: [Working]</h3><a href='/help'>Get Help</a><br><br><a href='https://9.234456.xyz/abc.html'>Buy Nodes</a><br><br><a href='/download'>Download Apps</a><br><br><a href='/about'>About</a><h6>ID:"+radom+"</h6></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8' }})
   //return Response.redirect("", 301);
 } 
 if (pathname=="/cn") {
-  return new Response("<html><head><title>订阅</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><h1>你好!</h1><a href='/'>English</a><h3>服务状态: [工作中]</h3><a href='/cn-help'>获取帮助</a><br><br><a href='/cn-download'>相关软件下载</a><br><br><a href='/about'>关于</a><h6>ID:"+radom+"</h6></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8' }})
+  return new Response("<html><head><title>订阅</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><h1>你好!</h1><a href='/'>English</a><h3>服务状态: [工作中]</h3><a href='/cn-help'>获取帮助</a><br><br><a href='https://9.234456.xyz/abc.html'>购买节点</a><br><br><a href='/cn-download'>相关软件下载</a><br><br><a href='/about'>关于</a><h6>ID:"+radom+"</h6></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8' }})
   //return Response.redirect("", 301);
 } 
 if (pathname=="/robots.txt") {
@@ -69,6 +80,10 @@ if (pathname=="/cn-download"||pathname=="/cn-download/") {
 if (pathname=="/about"||pathname=="/about/") {
   return new Response("<html><head><title>About</title><meta name='viewport' content='initial-scale=1.0, user-scalable=no'/></head><body><a href='javascript:history.go(-1);'>Back</a><p>sub.usercontent.workers.dev</p></body></html>", { headers: { "content-type": 'text/html;charset=UTF-8'}})
 }  
-return fetch(`https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt`);
 //return new Response("", { headers: { "content-type": "text/plain" }})
+return fetch(`https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt`);
+//return fetch(`https://raw.githubusercontent.com/freefq/free/master/v2`);
+//return fetch(`https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2`);
+}
+
 }
